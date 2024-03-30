@@ -16,7 +16,7 @@ build:
 	$(CC) tag $(REPO):$(REL) $(REPO):latest
 
 run: build
-	$(CC) run --rm -it -e THREADS=$(THREADS) -e PRIORITY=$(PRIORITY) -v $(PWD)/config.json:/xmrig/config.json --entrypoint xmrig $(REPO):$(REL)
+	$(CC) run --rm -it -e THREADS=$(THREADS) -e PRIORITY=$(PRIORITY) -v $(PWD)/config.json:/xmrig/config.json:ro --entrypoint xmrig $(REPO):$(REL)
 
 run-cuda: build
 	$(CC) run \

