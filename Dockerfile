@@ -23,7 +23,7 @@ RUN set -xe; \
 
 
 FROM ubuntu:22.04 as build-runner
-ARG VERSION=6.20.0
+ARG VERSION=6.21.2
 LABEL maintainer="Patrice Ferlet <metal3d@gmail.com>"
 
 RUN set -xe; \

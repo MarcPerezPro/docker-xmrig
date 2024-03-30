@@ -1,11 +1,11 @@
-VERSION = 6.20.0
+VERSION = 6.21.2
 CUDA_PLUGIN_VERSION=6.17.0
 CUDA_VERSION=11-4
 REL = $(VERSION)-local
 THREADS = $(shell nproc)
 PRIORITY = 0
-REPO=docker.io/metal3d/xmrig
-CC=podman
+REPO=docker.io/marcperez123/xmrig
+CC=docker
 
 HUB=https://hub.docker.com/v2
 
