@@ -3,13 +3,13 @@ LABEL maintainer="Patrice Ferlet <metal3d@gmail.com>"
 
 ARG CUDA_VERSION=11-4
 RUN set -xe; \
-    apt update; \
-    apt install -y nvidia-cuda-toolkit;
+    apt-get update; \
+    apt-get install -y nvidia-cuda-toolkit;
 
 ARG CUDA_PLUGIN_VERSION=6.21.1
 RUN set -xe; \
-    apt install -y wget build-essential cmake automake libtool autoconf; \
-    apt install -y gcc-9 g++-9; \
+    apt-get install -y wget build-essential cmake automake libtool autoconf; \
+    apt-get install -y gcc-9 g++-9; \
     update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 100; \
     update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 100; \
     wget https://github.com/xmrig/xmrig-cuda/archive/refs/tags/v${CUDA_PLUGIN_VERSION}.tar.gz; \
@@ -27,9 +27,9 @@ ARG VERSION=6.21.2
 LABEL maintainer="Patrice Ferlet <metal3d@gmail.com>"
 
 RUN set -xe; \
-    apt update; \
-    apt install -y wget build-essential cmake automake libtool autoconf; \
-    apt install -y gcc-9 g++-9; \
+    apt-get update; \
+    apt-get install -y wget build-essential cmake automake libtool autoconf; \
+    apt-get install -y gcc-9 g++-9; \
     update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 100; \
     update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 100; \
     rm -rf /var/lib/apt/lists/*; \
@@ -57,9 +57,9 @@ LABEL org.opencontainers.image.description="XMRig miner with CUDA support on Doc
 LABEL org.opencontainers.image.licenses="MIT"
 RUN set -xe; \
     mkdir /xmrig; \
-    apt update; \
-    apt -y install jq; \
-    apt -y install libnvidia-compute-535 libnvrtc11.2; \
+    apt-get update; \
+    apt-get -y install jq; \
+    apt-get -y install libnvidia-compute-535 libnvrtc11.2; \
     rm -rf /var/lib/apt/lists/*
 COPY --from=build-runner /xmrig/xmrig /xmrig/xmrig
 COPY --from=build-runner /xmrig/src/config.json /xmrig/config.json
