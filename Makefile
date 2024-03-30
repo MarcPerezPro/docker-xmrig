@@ -12,7 +12,7 @@ HUB=https://hub.docker.com/v2
 all: build run
 
 build:
-	$(CC) build -t $(REPO):$(REL) --build-arg VERSION=$(VERSION) .
+	$(CC) build -t $(REPO):$(REL) --platform=linux/amd64 --build-arg VERSION=$(VERSION) .
 	$(CC) tag $(REPO):$(REL) $(REPO):latest
 
 run: build
