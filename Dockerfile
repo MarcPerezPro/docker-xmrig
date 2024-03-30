@@ -6,7 +6,7 @@ RUN set -xe; \
     apt update; \
     apt install -y nvidia-cuda-toolkit;
 
-ARG CUDA_PLUGIN_VERSION=6.17.0
+ARG CUDA_PLUGIN_VERSION=6.21.1
 RUN set -xe; \
     apt install -y wget build-essential cmake automake libtool autoconf; \
     apt install -y gcc-9 g++-9; \
