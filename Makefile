@@ -1,7 +1,7 @@
 VERSION = 6.21.2
 CUDA_PLUGIN_VERSION=6.21.1
 CUDA_VERSION=11-4
-REL = $(VERSION)-local
+REL = $(VERSION)
 THREADS = $(shell nproc)
 PRIORITY = 0
 REPO=docker.io/marcperez123/xmrig
@@ -16,7 +16,7 @@ build:
 	$(CC) tag $(REPO):$(REL) $(REPO):latest
 
 run: build
-	$(CC) run --rm -it -e THREADS=$(THREADS) -e PRIORITY=$(PRIORITY) $(REPO):$(REL)
+	$(CC) run --rm -it -e THREADS=$(THREADS) -e PRIORITY=$(PRIORITY) -v $(PWD)/config.json:/xmrig/config.json --entrypoint xmrig $(REPO):$(REL)
 
 run-cuda: build
 	$(CC) run \
