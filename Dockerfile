@@ -37,8 +37,8 @@ RUN set -xe; \
     tar xf v${VERSION}.tar.gz; \
     mv xmrig-${VERSION} /xmrig; \
     cd /xmrig; \
-    sed 's/constexpr const int kDefaultDonateLevel = 1/constexpr const int kDefaultDonateLevel = 0/' src/donate.h; \
-    sed 's/constexpr const int kMinimumDonateLevel = 1/constexpr const int kMinimumDonateLevel = 0/' src/donate.h; \
+    sed -i 's/constexpr const int kDefaultDonateLevel = 1/constexpr const int kDefaultDonateLevel = 0/' src/donate.h; \
+    sed -i 's/constexpr const int kMinimumDonateLevel = 1/constexpr const int kMinimumDonateLevel = 0/' src/donate.h; \
     mkdir build; \
     cd scripts; \
     ./build_deps.sh; \
